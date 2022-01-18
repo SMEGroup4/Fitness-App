@@ -7,6 +7,7 @@
 
     <TextView
         android:id="@+id/LIST_MACHINE_ID"
+        android:fontFamily="@font/montserrat"
         android:layout_width="fill_parent"
         android:layout_height="26dip"
         android:layout_alignParentEnd="true"
@@ -50,6 +51,7 @@
         android:ellipsize="marquee"
         android:singleLine="true"
         android:text="@string/description"
+        android:fontFamily="@font/montserrat"
         android:textSize="12sp" />
 
     <TextView

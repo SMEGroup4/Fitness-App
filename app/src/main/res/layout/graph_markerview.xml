@@ -12,6 +12,7 @@
         android:layout_marginTop="4dp"
         android:ellipsize="end"
         android:text="10/10/1000"
+        android:fontFamily="@font/montserrat"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/black"
         android:textSize="10sp" />
@@ -26,6 +27,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:text="70.0"
+        android:fontFamily="@font/montserrat"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@android:color/black"
         android:textSize="14sp" />

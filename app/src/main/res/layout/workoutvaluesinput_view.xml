@@ -10,6 +10,7 @@
         android:id="@+id/ExerciseTypeSelectorLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:visibility="visible">
@@ -22,22 +23,25 @@
             android:layout_marginStart="5dp"
             android:layout_weight="0"
             android:gravity="center"
+            android:fontFamily="@font/montserrat"
+            android:textStyle="bold"
             android:text="@string/exercise_type" />
 
         <androidx.cardview.widget.CardView
             style="@style/CardViewStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="40"
             app:cardCornerRadius="5dp">
 
             <TextView
                 android:id="@+id/StrenghSelector"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@color/record_background_odd"
                 android:gravity="center"
                 android:text="@string/strength_category"
+                android:fontFamily="@font/montserrat"
                 app:autoSizeMaxTextSize="14sp"
                 app:autoSizeTextType="uniform" />
 
@@ -46,16 +50,17 @@
         <androidx.cardview.widget.CardView
             style="@style/CardViewStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="40"
             app:cardCornerRadius="5dp">
 
             <TextView
                 android:id="@+id/CardioSelector"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/CardioLabel"
+                android:fontFamily="@font/montserrat"
                 app:autoSizeMaxTextSize="14sp"
                 app:autoSizeTextType="uniform" />
 
@@ -64,16 +69,17 @@
         <androidx.cardview.widget.CardView
             style="@style/CardViewStyle"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:layout_weight="40"
             app:cardCornerRadius="5dp">
 
             <TextView
                 android:id="@+id/IsometricSelector"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/staticExercise"
+                android:fontFamily="@font/montserrat"
                 app:autoSizeMaxTextSize="14sp"
                 app:autoSizeTextType="uniform" />
 
@@ -86,6 +92,7 @@
         android:layout_height="match_parent"
         android:baselineAligned="false"
         android:gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
         android:visibility="visible">
 
@@ -99,6 +106,7 @@
             app:showComment="false"
             app:showUnit="false"
             app:title="@string/SerieLabel"
+            android:fontFamily="@font/montserrat"
             app:value=""
             tools:value="10"
             tools:visibility="visible" />
@@ -113,6 +121,7 @@
             app:showComment="false"
             app:showUnit="false"
             app:title="@string/RepetitionLabel_short"
+            android:fontFamily="@font/montserrat"
             app:value=""
             tools:value="10"
             tools:visibility="visible" />
@@ -192,6 +201,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:layout_weight="100"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/activate_rest_time" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
@@ -208,6 +218,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
                 android:layout_weight="100"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/rest_time" />
 
             <androidx.appcompat.widget.AppCompatEditText

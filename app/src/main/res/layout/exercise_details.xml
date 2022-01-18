@@ -48,6 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/name"
                     android:textColor="@color/cardview_title_color"
                     android:textSize="12sp"
@@ -64,6 +65,7 @@
                     android:lines="1"
                     android:maxLines="1"
                     android:textSize="16sp"
+                    android:fontFamily="@font/montserrat"
                     android:title="@string/name"
                     tools:text="Profile Name" />
 
@@ -73,6 +75,7 @@
                     android:layout_gravity="center_horizontal"
                     android:gravity="center_vertical"
                     android:text="@string/description"
+                    android:fontFamily="@font/montserrat"
                     android:textColor="@color/cardview_title_color"
                     android:textSize="12sp"
                     android:textStyle="italic" />
@@ -88,6 +91,7 @@
                     android:lines="1"
                     android:maxLines="1"
                     android:textSize="14sp"
+                    android:fontFamily="@font/montserrat"
                     android:title="@string/description"
                     tools:text="Description" />
 
@@ -98,6 +102,7 @@
                     android:layout_gravity="center_horizontal"
                     android:gravity="center_vertical"
                     android:text="@string/muscles"
+                    android:fontFamily="@font/montserrat"
                     android:textColor="@color/cardview_title_color"
                     android:textSize="12sp"
                     android:textStyle="italic" />

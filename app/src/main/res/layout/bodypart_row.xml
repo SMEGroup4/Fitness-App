@@ -35,6 +35,7 @@
             android:layout_weight="25"
             android:gravity="center_vertical"
             android:textSize="16sp"
+            android:fontFamily="@font/montserrat"
             tools:text="Example Body Part" />
 
         <com.github.mikephil.charting.charts.LineChart
@@ -54,6 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/lastRecordLabel"
                 android:textSize="10sp" />
 
@@ -63,6 +65,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:textSize="20sp"
+                android:fontFamily="@font/montserrat"
                 tools:text="50 cm" />
         </LinearLayout>
     </LinearLayout>

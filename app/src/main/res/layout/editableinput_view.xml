@@ -7,11 +7,11 @@
         android:id="@+id/valueTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
         android:layout_toStartOf="@id/editButton"
         android:gravity="center_vertical"
         android:textSize="12sp"
+        android:fontFamily="@font/montserrat"
         tools:text="Editable input" />
 
     <ImageView

@@ -24,7 +24,7 @@
         android:textSize="12sp"
         android:textStyle="bold|italic"
         android:visibility="gone"
-        tool:text="- 12/09/2019 - "
+        tool:text="- 1/09/2022 - "
         tool:visibility="visible" />
 
     <androidx.cardview.widget.CardView
@@ -76,6 +76,7 @@
                         app:autoSizeMaxTextSize="16sp"
                         app:autoSizeMinTextSize="12sp"
                         app:autoSizeTextType="uniform"
+                        android:fontFamily="@font/montserrat"
                         tool:text="Program dddsfdfsdfsdfsdfdddsfdfsdfsdfsdf" />
 
                     <LinearLayout
@@ -91,6 +92,7 @@
                             android:layout_marginBottom="0dp"
                             android:maxLines="1"
                             android:text="Start: "
+                            android:fontFamily="@font/montserrat"
                             android:textSize="10sp"
                             android:textStyle="bold"
                             tool:ignore="SmallSp" />
@@ -105,7 +107,7 @@
                             android:maxLines="1"
                             android:textSize="10sp"
                             tool:ignore="SmallSp"
-                            tool:text="12/34/2016" />
+                            tool:text="12/15/2021" />
 
                         <TextView
                             android:id="@+id/START_TIME_CELL"
@@ -134,6 +136,7 @@
                             android:layout_marginBottom="0dp"
                             android:maxLines="1"
                             android:text="End: "
+                            android:fontFamily="@font/montserrat"
                             android:textSize="10sp"
                             android:textStyle="bold"
                             tool:ignore="SmallSp" />
@@ -148,7 +151,7 @@
                             android:maxLines="1"
                             android:textSize="10sp"
                             tool:ignore="SmallSp"
-                            tool:text="12/34/2016" />
+                            tool:text="12/25/2021" />
 
                         <TextView
                             android:id="@+id/END_TIME_CELL"

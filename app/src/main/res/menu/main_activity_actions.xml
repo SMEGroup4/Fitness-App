@@ -28,9 +28,5 @@
         android:title="@string/import_database"
         app:showAsAction="never|withText" />
 
-    <item
-        android:id="@+id/action_apropos"
-        android:title="@string/AboutLabel"
-        app:showAsAction="never|withText" />
 
 </menu>
