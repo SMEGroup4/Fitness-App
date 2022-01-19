@@ -47,6 +47,7 @@
             android:focusable="true"
             android:text="@string/reset"
             android:textColor="#5DBCD2"
+            android:fontFamily="@font/montserrat"
             android:textStyle="bold" />
 
         <Button

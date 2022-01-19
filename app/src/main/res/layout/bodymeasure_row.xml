@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/CARDVIEW"
@@ -45,7 +46,8 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="24/08/2017" />
+                android:fontFamily="@font/montserrat"
+                tools:text="12/15/2021" />
 
             <TextView
                 android:id="@+id/LIST_BODYMEASURE_WEIGHT"

@@ -25,7 +25,7 @@
         android:textSize="12sp"
         android:textStyle="bold|italic"
         android:visibility="gone"
-        tool:text="- 12/09/2019 - "
+        tool:text="- 01/12/2022 - "
         tool:visibility="visible" />
 
     <androidx.cardview.widget.CardView
@@ -74,11 +74,13 @@
                         app:autoSizeMaxTextSize="16sp"
                         app:autoSizeMinTextSize="12sp"
                         app:autoSizeTextType="uniform"
+
                         tool:text="Machine dddsfdfsdfsdfsdfdddsfdfsdfsdfsdf" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -91,7 +93,7 @@
                             android:maxLines="1"
                             android:textSize="10sp"
                             tool:ignore="SmallSp"
-                            tool:text="12/34/2016" />
+                            tool:text="12/15/2021" />
 
                         <TextView
                             android:id="@+id/TIME_CELL"
@@ -151,6 +153,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
+                        android:layout_marginTop="10dp"
                         android:gravity="center"
                         android:maxLines="1"
                         tool:text="1" />
@@ -166,6 +169,7 @@
                         android:maxLines="1"
                         android:textColor="@color/index_color"
                         android:textStyle="italic"
+                        android:layout_marginTop="10dp"
                         tool:text="1"
                         tool:visibility="visible" />
                 </LinearLayout>
@@ -196,6 +200,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
+                        android:layout_marginTop="10dp"
                         android:gravity="center"
                         android:maxLines="1"
                         android:textAlignment="center"
@@ -210,6 +215,7 @@
                         android:layout_marginRight="5dp"
                         android:gravity="center"
                         android:maxLines="1"
+                        android:layout_marginTop="10dp"
                         android:textAlignment="center"
                         android:textColor="@color/index_color"
                         android:textStyle="italic"
@@ -243,6 +249,7 @@
                         android:gravity="center"
                         android:maxLines="1"
                         android:textAlignment="center"
+                        android:layout_marginTop="10dp"
                         tool:text="10:10:10" />
 
                     <TextView
@@ -258,6 +265,7 @@
                         android:textColor="@color/index_color"
                         android:textStyle="italic"
                         tool:text="3lb"
+                        android:layout_marginTop="10dp"
                         tool:visibility="visible" />
                 </LinearLayout>
 

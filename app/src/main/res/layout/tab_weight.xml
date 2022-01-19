@@ -50,6 +50,7 @@
                         <TextView
                             android:id="@+id/weightInput"
                             style="@style/PrimaryWeightMeasure"
+                            android:fontFamily="@font/montserrat"
                             android:text=" - "
                             android:title="@string/weightLabel"
                             tools:text="70.5" />
@@ -57,6 +58,7 @@
                         <com.github.mikephil.charting.charts.LineChart
                             android:id="@+id/weightGraph"
                             style="@style/MiniLineChart"
+                            android:fontFamily="@font/montserrat"
                             android:clickable="true"
                             android:focusable="true" />
 
@@ -64,6 +66,7 @@
                             android:id="@+id/weightDetailsButton"
                             style="@style/Widget.AppCompat.Button.Borderless.DetailsButton"
                             android:drawableStart="@drawable/ic_list_alt"
+                            android:fontFamily="@font/montserrat"
                             android:text="@string/details" />
 
 
@@ -90,12 +93,14 @@
 
                         <TextView
                             style="@style/CardViewTitle"
+                            android:fontFamily="@font/montserrat"
                             android:text="@string/fatLabel" />
 
                         <TextView
                             android:id="@+id/fatInput"
                             style="@style/PrimaryWeightMeasure"
                             android:title="@string/fatLabel"
+                            android:fontFamily="@font/montserrat"
                             tools:text="50.9" />
 
                         <com.github.mikephil.charting.charts.LineChart
@@ -112,6 +117,7 @@
                             android:id="@+id/fatDetailsButton"
                             style="@style/Widget.AppCompat.Button.Borderless.DetailsButton"
                             android:drawableStart="@drawable/ic_list_alt"
+                            android:fontFamily="@font/montserrat"
                             android:text="@string/details" />
 
                     </LinearLayout>
@@ -151,6 +157,7 @@
                         <TextView
                             android:id="@+id/musclesInput"
                             style="@style/PrimaryWeightMeasure"
+                            android:fontFamily="@font/montserrat"
                             android:title="@string/musclesLabel"
                             tools:text="20.2" />
 
@@ -167,6 +174,7 @@
                             android:id="@+id/musclesDetailsButton"
                             style="@style/Widget.AppCompat.Button.Borderless.DetailsButton"
                             android:drawableStart="@drawable/ic_list_alt"
+                            android:fontFamily="@font/montserrat"
                             android:text="@string/details" />
                     </LinearLayout>
 
@@ -191,12 +199,14 @@
 
                         <TextView
                             style="@style/CardViewTitle"
+                            android:fontFamily="@font/montserrat"
                             android:text="@string/waterLabel" />
 
                         <TextView
                             android:id="@+id/waterInput"
                             style="@style/PrimaryWeightMeasure"
                             android:title="@string/waterLabel"
+                            android:fontFamily="@font/montserrat"
                             tools:text="20.5" />
 
                         <com.github.mikephil.charting.charts.LineChart
@@ -213,6 +223,7 @@
                             android:id="@+id/waterDetailsButton"
                             style="@style/Widget.AppCompat.Button.Borderless.DetailsButton"
                             android:drawableStart="@drawable/ic_list_alt"
+                            android:fontFamily="@font/montserrat"
                             android:text="@string/details" />
                     </LinearLayout>
 
@@ -240,6 +251,7 @@
                         android:layout_marginTop="0dp"
                         android:layout_weight="50"
                         android:gravity="center_vertical"
+                        android:fontFamily="@font/montserrat"
                         android:text="@string/size" />
 
                     <TextView
@@ -250,6 +262,7 @@
                         android:layout_margin="0dp"
                         android:layout_weight="50"
                         android:gravity="center"
+                        android:fontFamily="@font/montserrat"
                         tools:text="50" />
 
                     <com.github.mikephil.charting.charts.LineChart
@@ -265,6 +278,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="0dp"
                         android:drawableTop="@drawable/ic_list_alt"
+                        android:fontFamily="@font/montserrat"
                         android:text="@string/details" />
 
                 </LinearLayout>
@@ -302,6 +316,7 @@
                                 android:layout_marginTop="0dp"
                                 android:layout_span="4"
                                 android:text="@string/indexLabel"
+                                android:fontFamily="@font/montserrat"
                                 android:textSize="24sp" />
 
                         </TableRow>
@@ -312,7 +327,8 @@
 
                             <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/montserrat"
                                 android:text="@string/imcLabel"
                                 android:textSize="20sp" />
 
@@ -329,6 +345,7 @@
                                 android:gravity="center"
                                 android:textSize="20sp"
                                 android:textStyle="italic"
+                                android:fontFamily="@font/montserrat"
                                 tools:text="normal" />
 
                             <ImageButton
@@ -345,6 +362,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/ffmiLabel"
+                                android:fontFamily="@font/montserrat"
                                 android:textSize="20sp" />
 
                             <TextView
@@ -359,6 +377,7 @@
                                 android:gravity="center"
                                 android:textSize="20sp"
                                 android:textStyle="italic"
+                                android:fontFamily="@font/montserrat"
                                 tools:text="normal" />
 
                             <ImageButton

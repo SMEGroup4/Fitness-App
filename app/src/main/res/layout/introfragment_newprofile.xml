@@ -41,6 +41,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/lato"
                 android:gravity="center_horizontal"
                 android:text="@string/create_a_profile"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
@@ -58,6 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/name_or_pseudo"
+                android:fontFamily="@font/montserrat"
                 android:importantForAutofill="no"
                 android:inputType="text"
                 android:singleLine="true" />
@@ -67,6 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
                 android:hint="@string/birthday_optional"
                 android:text="@string/gender"
                 android:textSize="12sp" />
@@ -88,6 +91,7 @@
                     android:gravity="center_horizontal"
                     android:padding="2dp"
                     android:text="@string/maleGender"
+                    android:fontFamily="@font/montserrat"
                     android:textSize="20sp"
                     android:textColor="@android:color/black" />
 
@@ -103,6 +107,7 @@
                     android:gravity="center_horizontal"
                     android:padding="2dp"
                     android:text="@string/femaleGender"
+                    android:fontFamily="@font/montserrat"
                     android:textSize="20sp"
                     android:textColor="@android:color/black" />
 
@@ -117,6 +122,7 @@
                     android:gravity="center_horizontal"
                     android:padding="2dp"
                     android:text="@string/otherGender"
+                    android:fontFamily="@font/montserrat"
                     android:textSize="20sp"
                     android:textColor="@android:color/black" />
 
@@ -130,6 +136,7 @@
                 android:singleLine="true"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/birthday_optional"
                 android:textSize="12sp" />
 
@@ -146,12 +153,23 @@
 
             <Button
                 android:id="@+id/create_newprofil"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
                 android:layout_marginTop="@dimen/mi_baseline"
-                android:background="@drawable/round_corner_button"
+                android:background="@drawable/rounded_rectangle"
                 android:text="@string/create"
-                android:textColor="@android:color/black" />
+                android:fontFamily="@font/montserrat"
+                android:textSize="17sp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:focusable="true"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_blue_bright"/>
 
         </LinearLayout>
     </ScrollView>

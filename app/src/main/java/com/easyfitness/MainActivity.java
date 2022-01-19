@@ -676,14 +676,6 @@ public class MainActivity extends AppCompatActivity {
                 deleteDbDialog.show();
 
                 return true;
-            case R.id.action_apropos:
-                // Display the fragment as the main content.
-                showFragment(ABOUT);
-                //getAboutFragment().setHasOptionsMenu(true);
-                return true;
-            //case android.R.id.home:
-            //onBackPressed();
-            //	return true;
             case R.id.action_chrono:
                 ChronoDialogbox cdd = new ChronoDialogbox(MainActivity.this);
                 cdd.show();

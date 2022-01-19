@@ -94,6 +94,7 @@
                         android:scaleType="center"
                         android:text="+"
                         android:textSize="24sp"
+                        android:fontFamily="@font/montserrat"
                         tools:ignore="HardcodedText" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -121,6 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="5dp"
+                android:fontFamily="@font/montserrat"
                 android:text="@string/sizeTableLabel" />
 
             <include layout="@layout/bodymeasure_rowheader" />
