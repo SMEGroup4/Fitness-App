@@ -165,8 +165,7 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.tab_about, container, true);
-
+        View view = inflater.inflate(R.layout.tab_about, container, false);
 
         TextView mpDBVersionTextView = view.findViewById(R.id.database_version);
         mpDBVersionTextView.setText(Integer.toString(DatabaseHelper.DATABASE_VERSION));
@@ -204,7 +203,7 @@ public class AboutFragment extends Fragment {
         mpMaterialFavoriteButton.setOnClickListener(clickLicense);
         mpFastNFitnesss.setOnClickListener(clickLicense);
 
-
+        // Inflate the layout for this fragment
         return view;
     }
 
