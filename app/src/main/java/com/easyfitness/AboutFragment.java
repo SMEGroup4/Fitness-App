@@ -165,7 +165,7 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.tab_about, container, false);
+        View view = inflater.inflate(R.layout.tab_about, container, true);
 
 
         TextView mpDBVersionTextView = view.findViewById(R.id.database_version);
@@ -205,7 +205,7 @@ public class AboutFragment extends Fragment {
         mpFastNFitnesss.setOnClickListener(clickLicense);
 
 
-        return mpChronometerTextView;
+        return view;
     }
 
     public MainActivity getMainActivity() {
@@ -213,5 +213,4 @@ public class AboutFragment extends Fragment {
     }
 
 }
-
 
