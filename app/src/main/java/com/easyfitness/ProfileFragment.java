@@ -219,17 +219,6 @@ public class ProfileFragment extends Fragment {
             nameEdit.setText(name);
         });
 
-        profileViMo.getPhoto().observe(getViewLifecycleOwner(), photo -> {
-            boolean success = false;
-            if (photo != null) {
-                success = ImageUtil.setPic(roundProfile, photo);
-                roundProfile.invalidate();
-            }
-            if (!success) {
-                roundProfile.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.profile));
-            }
-        });
-
         profileViMo.getGender().observe(getViewLifecycleOwner(), gender -> {
             switch (gender) {
                 case Gender.MALE:
@@ -287,8 +276,6 @@ public class ProfileFragment extends Fragment {
             profileViMo.setSizeUnit(Unit.CM);
         }
     }
-
-    profileViMo.setPhoto(profile.getPhoto());
 
     public String getName() {
         return getArguments().getString("name");
