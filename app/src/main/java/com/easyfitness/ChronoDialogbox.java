@@ -4,21 +4,23 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import gr.antoniom.chronometer.Chronometer;
 
+// TODO: Fix start timer first time bug
 public class ChronoDialogbox extends Dialog implements
         android.view.View.OnClickListener {
 
     public Activity c;
     public Dialog d;
-    public Button startstop, exit, reset;
+    public Button btnStartStop, exit, btnResetLap;
     public Chronometer chrono;
-    String strCurrentTime = "";
     long startTime = 0;
     long stopTime = 0;
+
     private boolean chronoStarted = false;
     private boolean chronoResetted = false;
 
@@ -30,58 +32,75 @@ public class ChronoDialogbox extends Dialog implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setTitle(c.getResources().getString(R.string.ChronometerLabel)); //ChronometerLabel
-        setContentView(R.layout.dialog_chrono);
-        this.setCanceledOnTouchOutside(false); // make it modal
 
-        startstop = findViewById(R.id.btn_startstop);
+        setTitle(c.getResources().getString(R.string.ChronometerLabel));
+        setContentView(R.layout.dialog_chrono);
+
+        this.setCanceledOnTouchOutside(false); // Make it a modal
+
+        btnStartStop = findViewById(R.id.btn_start_stop);
+        btnResetLap = findViewById(R.id.btn_reset_lap);
         exit = findViewById(R.id.btn_exit);
-        reset = findViewById(R.id.btn_reset);
         chrono = findViewById(R.id.chronoValue);
 
-        startstop.setOnClickListener(this);
+        btnStartStop.setOnClickListener(this);
+        btnResetLap.setOnClickListener(this);
         exit.setOnClickListener(this);
-        reset.setOnClickListener(this);
+
         chrono.setBase(SystemClock.elapsedRealtime());
         startTime = SystemClock.elapsedRealtime();
-
-        startstop.setText("Start");
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_startstop:
+            case R.id.btn_start_stop:
+
                 if (chronoStarted) {
                     chrono.stop();
                     stopTime = SystemClock.elapsedRealtime();
                     chronoStarted = false;
-                    startstop.setText("Start");
+
+                    btnStartStop.setText("Start");
+                    btnResetLap.setText("Reset");
                 } else {
                     if (chronoResetted) {
                         startTime = SystemClock.elapsedRealtime();
                     } else {
                         startTime = SystemClock.elapsedRealtime() - (stopTime - startTime);
                     }
+
                     chrono.setBase(startTime);
                     chrono.start();
                     chronoStarted = true;
-                    startstop.setText("Stop");
+
+                    btnStartStop.setText("Stop");
+                    btnResetLap.setText("Lap");
                 }
+
                 chronoResetted = false;
+
                 break;
-            case R.id.btn_reset:
-                startTime = SystemClock.elapsedRealtime();
-                chrono.setBase(startTime);
-                chrono.setText("00:00:00");
-                chronoResetted = true;
+            case R.id.btn_reset_lap:
+
+                if(chronoStarted) {
+                    // Lap
+                    Log.println(Log.INFO, "Tag", chrono.);
+                } else {
+                    startTime = SystemClock.elapsedRealtime();
+                    chrono.setBase(startTime);
+                    chrono.setText("00:00:00");
+                    chronoResetted = true;
+                }
+
                 break;
             case R.id.btn_exit:
+
                 chrono.stop();
                 chronoStarted = false;
                 chrono.setText("00:00:00");
-                startstop.setText("Start");
+                btnStartStop.setText("Start");
+
                 dismiss();
                 break;
             default:
