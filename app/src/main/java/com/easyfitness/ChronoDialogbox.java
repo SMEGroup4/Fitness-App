@@ -10,7 +10,10 @@ import android.widget.Button;
 
 import gr.antoniom.chronometer.Chronometer;
 
-// TODO: Fix start timer first time bug
+// TODO: Get lapping time to log
+// TODO: List of lapped times
+// TODO: Reset clears list
+
 public class ChronoDialogbox extends Dialog implements
         android.view.View.OnClickListener {
 
@@ -22,7 +25,7 @@ public class ChronoDialogbox extends Dialog implements
     long stopTime = 0;
 
     private boolean chronoStarted = false;
-    private boolean chronoResetted = false;
+    private boolean chronoResetted = true;
 
     public ChronoDialogbox(Activity a) {
         super(a);
@@ -85,7 +88,7 @@ public class ChronoDialogbox extends Dialog implements
 
                 if(chronoStarted) {
                     // Lap
-                    Log.println(Log.INFO, "Tag", chrono.);
+                    Log.println(Log.INFO, "Tag", Long.toString(chrono.getBase()));
                 } else {
                     startTime = SystemClock.elapsedRealtime();
                     chrono.setBase(startTime);
