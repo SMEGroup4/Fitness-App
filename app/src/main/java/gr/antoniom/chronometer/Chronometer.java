@@ -113,19 +113,17 @@ public class Chronometer extends AppCompatTextView {
         updateRunning();
     }
 
-    private synchronized void updateText(long now) {
-        timeElapsed = now - mBase;
-
+    public String getFormattedText(long timeElapsed) {
         DecimalFormat df = new DecimalFormat("00");
 
         int hours = (int) (timeElapsed / (3600 * 1000));
         int remaining = (int) (timeElapsed % (3600 * 1000));
 
-        int minutes = (int) (remaining / (60 * 1000));
-        remaining = (int) (remaining % (60 * 1000));
+        int minutes = remaining / (60 * 1000);
+        remaining = remaining % (60 * 1000);
 
-        int seconds = (int) (remaining / 1000);
-        remaining = (int) (remaining % (1000));
+        int seconds = remaining / 1000;
+        remaining = remaining % (1000);
 
         int milliseconds = remaining / DELAY_MILLIS;
 
@@ -147,7 +145,11 @@ public class Chronometer extends AppCompatTextView {
         if (mPreciseClock)
             text += millisFormat.format(milliseconds);
 
-        setText(text);
+        return text;
+    }
+
+    private synchronized void updateText(long now) {
+        setText(getFormattedText(now - mBase));
     }
 
     private void updateRunning() {

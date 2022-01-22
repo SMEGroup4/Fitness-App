@@ -4,15 +4,15 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import gr.antoniom.chronometer.Chronometer;
-
-// TODO: Get lapping time to log
-// TODO: List of lapped times
-// TODO: Reset clears list
 
 public class ChronoDialogbox extends Dialog implements
         android.view.View.OnClickListener {
@@ -21,11 +21,13 @@ public class ChronoDialogbox extends Dialog implements
     public Dialog d;
     public Button btnStartStop, exit, btnResetLap;
     public Chronometer chrono;
+
     long startTime = 0;
     long stopTime = 0;
-
+    ArrayAdapter<String> lapTimerAdapter;
     private boolean chronoStarted = false;
     private boolean chronoResetted = true;
+    private List<String> lapTimes;
 
     public ChronoDialogbox(Activity a) {
         super(a);
@@ -52,6 +54,10 @@ public class ChronoDialogbox extends Dialog implements
 
         chrono.setBase(SystemClock.elapsedRealtime());
         startTime = SystemClock.elapsedRealtime();
+
+        lapTimes = new ArrayList<>();
+        lapTimerAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, lapTimes);
+        ((ListView) findViewById(R.id.timer_lap_list)).setAdapter(lapTimerAdapter);
     }
 
     @Override
@@ -86,15 +92,18 @@ public class ChronoDialogbox extends Dialog implements
                 break;
             case R.id.btn_reset_lap:
 
-                if(chronoStarted) {
-                    // Lap
-                    Log.println(Log.INFO, "Tag", Long.toString(chrono.getBase()));
+                if (chronoStarted) {
+                    lapTimes.add(chrono.getFormattedText(SystemClock.elapsedRealtime() - startTime));
                 } else {
                     startTime = SystemClock.elapsedRealtime();
                     chrono.setBase(startTime);
                     chrono.setText("00:00:00");
                     chronoResetted = true;
+
+                    lapTimes.clear();
                 }
+                
+                lapTimerAdapter.notifyDataSetChanged();
 
                 break;
             case R.id.btn_exit:
