@@ -275,6 +275,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void updateProfileViMo(Profile profile) {
+        profileViMo.setPhoto(profile.getPhoto());
         profileViMo.setBirthday(profile.getBirthday());
         profileViMo.setGender(profile.getGender());
         profileViMo.setName(profile.getName());
@@ -288,7 +289,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    profileViMo.setPhoto(profile.getPhoto());
+
 
     public String getName() {
         return getArguments().getString("name");
