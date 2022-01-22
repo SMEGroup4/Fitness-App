@@ -49,7 +49,6 @@ public class ChronoDialogbox extends Dialog implements
         chronoStarted = true;
 
         startstop.setText("Stop");
-
     }
 
     @Override
@@ -77,13 +76,13 @@ public class ChronoDialogbox extends Dialog implements
             case R.id.btn_reset:
                 startTime = SystemClock.elapsedRealtime();
                 chrono.setBase(startTime);
-                chrono.setText("00:00:0");
+                chrono.setText("00:00:00");
                 chronoResetted = true;
                 break;
             case R.id.btn_exit:
                 chrono.stop();
                 chronoStarted = false;
-                chrono.setText("00:00:0");
+                chrono.setText("00:00:00");
                 startstop.setText("Start");
                 dismiss();
                 break;

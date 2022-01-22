@@ -1,10 +1,5 @@
 package gr.antoniom.chronometer;
 
-
-/*
- * The Android chronometer widget revised so as to count milliseconds
- */
-
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +14,9 @@ public class Chronometer extends AppCompatTextView {
     @SuppressWarnings("unused")
     private static final String TAG = "Chronometer";
     private static final int TICK_WHAT = 2;
+    private static final int MILLIS_DIGIT_COUNT = 2;
+    private static final int DELAY_MILLIS = 1000 / (int) Math.pow(10, MILLIS_DIGIT_COUNT);
+
     private long mBase;
     private boolean mVisible;
     private boolean mStarted;
@@ -31,12 +29,8 @@ public class Chronometer extends AppCompatTextView {
             if (mRunning) {
                 updateText(SystemClock.elapsedRealtime());
                 dispatchChronometerTick();
-                if (mPreciseClock)
-                    mHandler.sendMessageDelayed(Message.obtain(mHandler,
-                            TICK_WHAT), 100);
-                else
-                    mHandler.sendMessageDelayed(Message.obtain(mHandler,
-                            TICK_WHAT), 1000);
+                sendMessageDelayed(Message.obtain(this, TICK_WHAT),
+                        DELAY_MILLIS);
             }
         }
     };
@@ -122,16 +116,19 @@ public class Chronometer extends AppCompatTextView {
         int hours = (int) (timeElapsed / (3600 * 1000));
         int remaining = (int) (timeElapsed % (3600 * 1000));
 
-        int minutes = remaining / (60 * 1000);
-        remaining = remaining % (60 * 1000);
+        int minutes = (int) (remaining / (60 * 1000));
+        remaining = (int) (remaining % (60 * 1000));
 
-        int seconds = remaining / 1000;
-        remaining = remaining % 1000;
+        int seconds = (int) (remaining / 1000);
+        remaining = (int) (remaining % (1000));
 
-        int milliseconds = 0;
-        if (mPreciseClock) {
-            milliseconds = (int) timeElapsed % 1000 / 100;
+        int milliseconds = (int) (((int) timeElapsed % 1000) / DELAY_MILLIS);
+
+        StringBuilder millisFormatPatter = new StringBuilder();
+        for (int i = 0; i < MILLIS_DIGIT_COUNT; i++) {
+            millisFormatPatter.append("0");
         }
+        DecimalFormat millisFormat = new DecimalFormat(millisFormatPatter.toString());
 
         String text = "";
 
@@ -140,8 +137,8 @@ public class Chronometer extends AppCompatTextView {
         }
 
         text += df.format(Math.abs(minutes)) + ":";
-        text += df.format(Math.abs(seconds));
-        if (mPreciseClock) text += ":" + milliseconds;
+        text += df.format(Math.abs(seconds)) + ":";
+        if (mPreciseClock) text += millisFormat.format(milliseconds);
 
         setText(text);
     }
@@ -154,7 +151,7 @@ public class Chronometer extends AppCompatTextView {
                 dispatchChronometerTick();
                 if (mPreciseClock) {
                     mHandler.sendMessageDelayed(Message.obtain(mHandler,
-                            TICK_WHAT), 100);
+                            TICK_WHAT), DELAY_MILLIS);
                 } else {
                     mHandler.sendMessageDelayed(Message.obtain(mHandler,
                             TICK_WHAT), 1000);
