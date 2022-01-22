@@ -14,7 +14,11 @@ public class Chronometer extends AppCompatTextView {
     @SuppressWarnings("unused")
     private static final String TAG = "Chronometer";
     private static final int TICK_WHAT = 2;
+
+    // How many 0's to put for milliseconds
     private static final int MILLIS_DIGIT_COUNT = 2;
+
+    // How long to wait before update timer text
     private static final int DELAY_MILLIS = 1000 / (int) Math.pow(10, MILLIS_DIGIT_COUNT);
 
     private long mBase;
@@ -24,6 +28,7 @@ public class Chronometer extends AppCompatTextView {
     private boolean mPreciseClock = true;
     private OnChronometerTickListener mOnChronometerTickListener;
     private long timeElapsed;
+
     private final Handler mHandler = new Handler() {
         public void handleMessage(Message m) {
             if (mRunning) {
@@ -122,7 +127,7 @@ public class Chronometer extends AppCompatTextView {
         int seconds = (int) (remaining / 1000);
         remaining = (int) (remaining % (1000));
 
-        int milliseconds = (int) (((int) timeElapsed % 1000) / DELAY_MILLIS);
+        int milliseconds = remaining / DELAY_MILLIS;
 
         StringBuilder millisFormatPatter = new StringBuilder();
         for (int i = 0; i < MILLIS_DIGIT_COUNT; i++) {
@@ -138,7 +143,9 @@ public class Chronometer extends AppCompatTextView {
 
         text += df.format(Math.abs(minutes)) + ":";
         text += df.format(Math.abs(seconds)) + ":";
-        if (mPreciseClock) text += millisFormat.format(milliseconds);
+
+        if (mPreciseClock)
+            text += millisFormat.format(milliseconds);
 
         setText(text);
     }

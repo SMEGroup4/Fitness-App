@@ -44,11 +44,9 @@ public class ChronoDialogbox extends Dialog implements
         exit.setOnClickListener(this);
         reset.setOnClickListener(this);
         chrono.setBase(SystemClock.elapsedRealtime());
-        chrono.start();
         startTime = SystemClock.elapsedRealtime();
-        chronoStarted = true;
 
-        startstop.setText("Stop");
+        startstop.setText("Start");
     }
 
     @Override
