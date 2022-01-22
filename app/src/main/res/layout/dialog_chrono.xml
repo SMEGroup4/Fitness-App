@@ -19,35 +19,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
         android:background="#3E80B4"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_startstop"
+            android:id="@+id/btn_start_stop"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="70dp"
             android:layout_height="30dp"
-            android:layout_margin="10dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@android:color/white"
             android:clickable="true"
             android:focusable="true"
+            android:fontFamily="@font/montserrat"
             android:text="@string/start"
             android:textColor="#5DBCD2"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_reset"
+            android:id="@+id/btn_reset_lap"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="70dp"
             android:layout_height="30dp"
             android:layout_margin="10dp"
-            android:layout_marginStart="5dp"
             android:background="@android:color/white"
             android:clickable="true"
             android:focusable="true"
+            android:fontFamily="@font/montserrat"
             android:text="@string/reset"
             android:textColor="#5DBCD2"
-            android:fontFamily="@font/montserrat"
             android:textStyle="bold" />
 
         <Button
@@ -55,14 +57,28 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="70dp"
             android:layout_height="30dp"
-            android:layout_margin="10dp"
-            android:layout_marginStart="5dp"
-            android:background="@android:color/white"
+            android:layout_marginVertical="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/holo_red_light"
             android:clickable="true"
             android:focusable="true"
+            android:fontFamily="@font/montserrat"
             android:text="@string/exit"
-            android:textColor="#5DBCD2"
-            android:textStyle="bold" />
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/timer_lap_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="#B6B6B6"
+            android:dividerHeight="3dp" />
 
     </LinearLayout>
 
