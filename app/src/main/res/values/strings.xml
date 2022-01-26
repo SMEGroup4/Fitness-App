@@ -127,6 +127,9 @@
     <!-- About Fragment  -->
     <string name="AboutLabel">About</string>
 
+    <!-- Body Scanner Fragment  -->
+    <string name="BodyScannerLabel" translatable="false">Body Scanner</string>
+
     <!-- Navigation Drawer -->
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
