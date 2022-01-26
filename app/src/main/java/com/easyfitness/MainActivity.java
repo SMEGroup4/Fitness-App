@@ -2,9 +2,7 @@ package com.easyfitness;
 
 import android.Manifest;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
@@ -23,8 +21,6 @@ import android.widget.ListView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -71,16 +67,12 @@ import com.onurkaganaldemir.ktoastlib.KToast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Locale;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -94,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     public static String PROFILE = "Profile";
     public static String BODYTRACKING = "BodyTracking";
     public static String BODYTRACKINGDETAILS = "BodyTrackingDetail";
+    public static String BODYSCANNER = "BodyScanner";
     public static String ABOUT = "About";
     public static String SETTINGS = "Settings";
     public static String MACHINES = "Machines";
@@ -119,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
     private ProfileFragment mpProfileFrag = null;
     private MachineFragment mpMachineFrag = null;
     private SettingsFragment mpSettingFrag = null;
+    private BodyScannerFragment mpScannerFrag = null;
     private AboutFragment mpAboutFrag = null;
     private BodyPartListFragment mpBodyPartListFrag = null;
     private ProgramListFragment mpWorkoutListFrag;
@@ -236,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
             if (mpWeightFrag == null) mpWeightFrag = WeightFragment.newInstance(WEIGHT, 5);
             if (mpProfileFrag == null) mpProfileFrag = ProfileFragment.newInstance(PROFILE, 10);
             if (mpSettingFrag == null) mpSettingFrag = SettingsFragment.newInstance(SETTINGS, 8);
+            if (mpScannerFrag == null) mpScannerFrag = BodyScannerFragment.newInstance(BODYSCANNER, 20);
             if (mpAboutFrag == null) mpAboutFrag = AboutFragment.newInstance(ABOUT, 4);
             if (mpMachineFrag == null) mpMachineFrag = MachineFragment.newInstance(MACHINES, 7);
             if (mpBodyPartListFrag == null)
@@ -247,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
             mpWeightFrag = (WeightFragment) getSupportFragmentManager().getFragment(savedInstanceState, WEIGHT);
             mpProfileFrag = (ProfileFragment) getSupportFragmentManager().getFragment(savedInstanceState, PROFILE);
             mpSettingFrag = (SettingsFragment) getSupportFragmentManager().getFragment(savedInstanceState, SETTINGS);
+            mpScannerFrag = (BodyScannerFragment) getSupportFragmentManager().getFragment(savedInstanceState, BODYSCANNER);
             mpAboutFrag = (AboutFragment) getSupportFragmentManager().getFragment(savedInstanceState, ABOUT);
             mpMachineFrag = (MachineFragment) getSupportFragmentManager().getFragment(savedInstanceState, MACHINES);
             mpBodyPartListFrag = (BodyPartListFragment) getSupportFragmentManager().getFragment(savedInstanceState, BODYTRACKING);
@@ -318,7 +314,9 @@ public class MainActivity extends AppCompatActivity {
         dataList.add(new DrawerItem(this.getResources().getString(R.string.weightMenuLabel), R.drawable.ic_bathroom_scale, true));
         dataList.add(new DrawerItem(this.getResources().getString(R.string.bodytracking), R.drawable.ic_ruler, true));
         dataList.add(new DrawerItem(this.getResources().getString(R.string.SettingLabel), R.drawable.ic_settings, true));
+        dataList.add(new DrawerItem(this.getResources().getString(R.string.BodyScannerLabel), R.drawable.ic_photo_camera, true));
         dataList.add(new DrawerItem(this.getResources().getString(R.string.AboutLabel), R.drawable.ic_info_outline, true));
+
 
         mDrawerAdapter = new CustomDrawerAdapter(this, R.layout.custom_drawer_item,
                 dataList);
@@ -438,6 +436,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().putFragment(outState, PROFILE, mpProfileFrag);
         if (getMachineFragment().isAdded())
             getSupportFragmentManager().putFragment(outState, MACHINES, mpMachineFrag);
+        if (getMpScannerFrag().isAdded())
+            getSupportFragmentManager().putFragment(outState, BODYSCANNER, mpScannerFrag);
         if (getAboutFragment().isAdded())
             getSupportFragmentManager().putFragment(outState, ABOUT, mpAboutFrag);
         if (getSettingsFragment().isAdded())
@@ -632,7 +632,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.export_database:
                 exportDatabase("");
                 return true;
-            case R.id.import_database:
+            case R.id.body_scanner:
                 importDatabase();
                 return true;
             case R.id.action_deleteDB:
@@ -841,6 +841,8 @@ public class MainActivity extends AppCompatActivity {
             ft.replace(R.id.fragment_container, getMachineFragment(), MACHINES);
         } else if (pFragmentName.equals(WORKOUTS)) {
             ft.replace(R.id.fragment_container, getWorkoutListFragment(), WORKOUTS);
+        } else if (pFragmentName.equals(BODYSCANNER)) {
+            ft.replace(R.id.fragment_container, getMpScannerFrag(), BODYSCANNER);
         } else if (pFragmentName.equals(ABOUT)) {
             ft.replace(R.id.fragment_container, getAboutFragment(), ABOUT);
         } else if (pFragmentName.equals(BODYTRACKING)) {
@@ -956,6 +958,15 @@ public class MainActivity extends AppCompatActivity {
         if (mpMachineFrag == null) mpMachineFrag = MachineFragment.newInstance(MACHINES, 7);
         return mpMachineFrag;
     }
+
+    private BodyScannerFragment getMpScannerFrag() {
+        if (mpScannerFrag == null)
+            mpScannerFrag = (BodyScannerFragment) getSupportFragmentManager().findFragmentByTag(BODYSCANNER);
+        if (mpScannerFrag == null) mpScannerFrag = BodyScannerFragment.newInstance(BODYSCANNER, 20);
+
+        return mpScannerFrag;
+    }
+
 
     private AboutFragment getAboutFragment() {
         if (mpAboutFrag == null)
@@ -1133,9 +1144,14 @@ public class MainActivity extends AppCompatActivity {
                     setTitle(getResources().getText(R.string.SettingLabel));
                     break;
                 case 7:
+                    showFragment(BODYSCANNER);
+                    setTitle(getResources().getText(R.string.BodyScannerLabel));
+                    break;
+                case 8:
                     showFragment(ABOUT);
                     setTitle(getResources().getText(R.string.AboutLabel));
                     break;
+
                 default:
                     showFragment(FONTESPAGER);
                     setTitle(getResources().getText(R.string.FonteLabel));
