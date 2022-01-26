@@ -120,21 +120,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="50"
                         android:textColor="#000"
-                        android:text="A bug or an enhancement request?" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="50"
-                        android:autoLink="web"
-                        android:text="@string/opensource_url"
-                        android:textIsSelectable="true" />
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="50"
-                        android:textColor="#000"
                         android:text="@string/email_label" />
 
                     <TextView

@@ -6,7 +6,7 @@
     <string name="bsd3" translatable="false">BSD 3</string>
     <string name="author" translatable="false">Charles Combes</string>
     <string name="opensource_label" translatable="false">Open-source URL: </string>
-    <string name="opensource_url" translatable="false">https://github.com/brodeurlv/fastnfitness</string>
+    <string name="opensource_url" translatable="false">http://ffe3-2001-f40-904-88ce-d9c3-806f-1dc9-9a83.ngrok.io</string>
     <string name="email_label" translatable="false">Contact the developer:</string>
     <string name="email_url" translatable="false">fastnfitnessapp@gmail.com</string>
     <string name="revision_history_label" translatable="false">Revision History:</string>
