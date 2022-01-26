@@ -12,10 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import de.psdev.licensesdialog.LicensesDialog;
 import de.psdev.licensesdialog.licenses.ApacheSoftwareLicense20;
-import de.psdev.licensesdialog.licenses.BSD3ClauseLicense;
-import de.psdev.licensesdialog.licenses.GnuLesserGeneralPublicLicense21;
 import de.psdev.licensesdialog.licenses.License;
-import de.psdev.licensesdialog.licenses.MITLicense;
 import de.psdev.licensesdialog.model.Notice;
 
 public class BodyScannerFragment extends Fragment{
