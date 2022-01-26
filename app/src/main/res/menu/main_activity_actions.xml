@@ -2,10 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/body_scanner"
-        android:title="Body Scanner"
-        app:showAsAction="never|withText" />
-    <item
         android:id="@+id/action_chrono"
         android:icon="@drawable/ic_timer"
         android:title="@string/ChronometerLabel"
